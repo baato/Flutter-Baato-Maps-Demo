@@ -33,6 +33,20 @@ class _BaatoReversePageState extends State<BaatoReversePage> {
   void _onMapCreated(BaatoMapController controller) {
     mapController = controller;
     mapController.styleManager.setStyle(BaatoMapStyle.defaultStyle);
+
+    mapController.markerManager.addMarker(BaatoSymbolOption(
+      geometry: BaatoCoordinate(
+        latitude: 27.8192878,
+        longitude: 85.3238007,
+      ),
+      textField: "Marker added from Style",
+      // iconImage: //Can add your own marker image
+    ));
+    mapController.controller!.addSymbol(SymbolOptions(
+        geometry: LatLng(27.7192873, 85.3238007),
+        textField: "from maplibre",
+        fontNames: ['OpenSans'],
+        iconImage: "assets/baato_marker.png"));
   }
 
   void _onStyleLoaded() {
@@ -48,12 +62,6 @@ class _BaatoReversePageState extends State<BaatoReversePage> {
         onMapCreated: _onMapCreated,
         onStyleLoadedCallback: _onStyleLoaded,
         myLocationEnabled: true,
-        // onTap: (point, coordinate, features) {
-        //   print("hello I have been tapped2");
-        //   mapController.controller?.addSymbol(SymbolOptions(
-        //       geometry: LatLng(coordinate.latitude, coordinate.longitude),
-        //       iconImage: "assets/baato_marker.png"));
-        // },
         onTap: (point, coordinate, features) {
           mapController.markerManager.addMarker(
             BaatoSymbolOption(
@@ -76,7 +84,6 @@ class _BaatoReversePageState extends State<BaatoReversePage> {
     final response = await Baato.api.place.reverseGeocode(baatoCoordinate);
 
     //perform reverse Search
-    print("hello $response");
 
     setState(() {
       placeResponse = response;

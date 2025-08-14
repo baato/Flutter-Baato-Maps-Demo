@@ -1,5 +1,6 @@
 import 'package:baato_maps/baato_maps.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'models/home_menu.dart';
 import 'ui/baato_location_picker.dart';
 import 'ui/baato_reverse.dart';
@@ -9,13 +10,11 @@ import 'ui/breeze_map.dart';
 import 'ui/monochrome_map.dart';
 import 'ui/retro_map.dart';
 
-BaatoAPI baatoAPI = Baato.api;
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
+  await dotenv.load();
   await Baato.configure(
-      apiKey: "your_api_keys",
+      apiKey: dotenv.get('baato_api_key'),
       enableLogging: true);
   runApp(const BaatoExampleApp());
 }
