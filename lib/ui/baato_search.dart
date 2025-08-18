@@ -74,7 +74,7 @@ class _SearchListViewExampleState extends State<SearchListViewExample> {
     );
   }
 
-  _searchBaatoPlaces(String query) async {
+  Future<void> _searchBaatoPlaces(String query) async {
     setState(() {
       isLoading = true;
     });
