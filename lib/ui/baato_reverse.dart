@@ -27,13 +27,8 @@ class BaatoReversePage extends StatefulWidget {
 }
 
 class _BaatoReversePageState extends State<BaatoReversePage> {
-  late BaatoMapController mapController;
+  BaatoMapController mapController = BaatoMapController();
   BaatoPlaceResponse? placeResponse;
-
-  void _onMapCreated(BaatoMapController controller) {
-    mapController = controller;
-    mapController.styleManager.setStyle(BaatoMapStyle.defaultStyle);
-  }
 
   void _onStyleLoaded() {
     AppToast.showMessage(
@@ -45,16 +40,16 @@ class _BaatoReversePageState extends State<BaatoReversePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: BaatoMap(
-        onMapCreated: _onMapCreated,
         onStyleLoadedCallback: _onStyleLoaded,
         myLocationEnabled: true,
+        controller: mapController,
         // onTap: (point, coordinate, features) {
         //   print("hello I have been tapped2");
         //   mapController.controller?.addSymbol(SymbolOptions(
         //       geometry: LatLng(coordinate.latitude, coordinate.longitude),
         //       iconImage: "assets/baato_marker.png"));
         // },
-        onTap: (point, coordinate, features) {
+        onMapClick: (point, coordinate, features) {
           mapController.markerManager.addMarker(
             BaatoSymbolOption(
               geometry: coordinate,
@@ -72,7 +67,7 @@ class _BaatoReversePageState extends State<BaatoReversePage> {
     );
   }
 
-  _requestLocationDetails(BaatoCoordinate baatoCoordinate) async {
+  Future<void> _requestLocationDetails(BaatoCoordinate baatoCoordinate) async {
     final response = await Baato.api.place.reverseGeocode(baatoCoordinate);
 
     //perform reverse Search
@@ -84,10 +79,10 @@ class _BaatoReversePageState extends State<BaatoReversePage> {
     _showAddressInfo(response);
   }
 
-  _showAddressInfo(BaatoPlaceResponse response) {
-    if (response.data!.isEmpty)
+  void _showAddressInfo(BaatoPlaceResponse response) {
+    if (response.data!.isEmpty) {
       print("No result found");
-    else {
+    } else {
       AppToast.showMessage(
         "Name: ${response.data![0].name} \nAddress: ${response.data![0].address}",
       );

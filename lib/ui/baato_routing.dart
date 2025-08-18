@@ -26,14 +26,12 @@ class BaatoDirectionsPage extends StatefulWidget {
 }
 
 class _BaatoDirectionsPageState extends State<BaatoDirectionsPage> {
-  late BaatoMapController mapController;
+  final BaatoMapController mapController=BaatoMapController();
   int _circleCount = 0;
 
   final List<BaatoCoordinate> _points = List.empty(growable: true);
 
   void _onMapCreated(BaatoMapController controller) {
-    mapController = controller;
-
     //show initial information
     AppToast.showMessage(
       "Tap on the map to select any two points to get routes between them...",
@@ -44,8 +42,9 @@ class _BaatoDirectionsPageState extends State<BaatoDirectionsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: BaatoMap(
+        controller: mapController,
         onMapCreated: _onMapCreated,
-        onTap: (point, coordinate, feature) {
+        onMapClick: (point, coordinate, feature) {
           _addTappedPointToPointsList(coordinate);
         },
         initialPosition: BaatoCoordinate(
@@ -56,7 +55,7 @@ class _BaatoDirectionsPageState extends State<BaatoDirectionsPage> {
     );
   }
 
-  _requestRoutingDetails(List<BaatoCoordinate> coordinates) async {
+  Future<void> _requestRoutingDetails(List<BaatoCoordinate> coordinates) async {
     //get routes between start and destination point
     final response = await Baato.api.direction.getRoutes(
         startCoordinate: coordinates[0],
@@ -66,7 +65,7 @@ class _BaatoDirectionsPageState extends State<BaatoDirectionsPage> {
     _showRouteDetails(response);
   }
 
-  _showRouteDetails(BaatoRouteResponse route) {
+  void _showRouteDetails(BaatoRouteResponse route) {
     mapController.routeManager.drawRouteFromResponse(
       route,
       // lineLayerProperties: BaatoLineLayerProperties() //Customize line property
