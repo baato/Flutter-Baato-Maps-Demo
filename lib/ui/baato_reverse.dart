@@ -12,7 +12,6 @@ class BaatoReverseExample extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Baato Reverse"),
-        backgroundColor: Color.fromRGBO(8, 30, 42, 50),
       ),
       body: BaatoReversePage(),
     );

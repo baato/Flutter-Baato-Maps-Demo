@@ -23,10 +23,7 @@ class _BaatoMapStyleView extends State<BaatoMapStyleView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Baato Breeze Map'),
-        backgroundColor: Color.fromRGBO(8, 30, 42, 50),
-      ),
+      appBar: AppBar(title: Text('Baato Breeze Map')),
       body: BaatoMap(
         controller: mapController,
         myLocationEnabled: true,
