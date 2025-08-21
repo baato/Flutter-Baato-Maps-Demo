@@ -15,7 +15,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await Baato.configure(
-      apiKey: "bpk.TqpOIK5KflKR_zEI0ONEVdCZmwmfMye9i67nAjsGlMgQ",
+      apiKey: "Your-API-KEY",
       enableLogging: true);
   runApp(const BaatoExampleApp());
 }
@@ -92,7 +92,6 @@ class _ListScreenState extends State<ListScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Baato Flutter"),
-        backgroundColor: const Color.fromRGBO(8, 30, 42, 50),
       ),
       body: StringList(homeMenus: homeMenus),
     );
