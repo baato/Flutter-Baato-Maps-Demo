@@ -10,9 +10,9 @@ class BaatoDirectionsExample extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Baato Directions"),
+        title: const Text("Baato Directions"),
       ),
-      body: BaatoDirectionsPage(),
+      body: const BaatoDirectionsPage(),
     );
   }
 }

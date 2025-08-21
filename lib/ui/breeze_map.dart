@@ -8,6 +8,6 @@ class BreezeMapStyle extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return BaatoMapStyleView(style: BaatoMapStyle.breeze);
+    return const BaatoMapStyleView(style: BaatoMapStyle.breeze);
   }
 }

@@ -11,9 +11,9 @@ class BaatoReverseExample extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Baato Reverse"),
+        title: const Text("Baato Reverse"),
       ),
-      body: BaatoReversePage(),
+      body: const BaatoReversePage(),
     );
   }
 }

@@ -8,9 +8,9 @@ class BaatoSearchExample extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Baato Search"),
+        title: const Text("Baato Search"),
       ),
-      body: SearchListViewExample(),
+      body: const SearchListViewExample(),
     );
   }
 }
@@ -30,7 +30,7 @@ class _SearchListViewExampleState extends State<SearchListViewExample> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(12.0),
+      padding: const EdgeInsets.all(12.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[_searchBar(), Expanded(flex: 1, child: _mainData())],
@@ -40,9 +40,9 @@ class _SearchListViewExampleState extends State<SearchListViewExample> {
 
   Widget _searchBar() {
     return Container(
-      padding: EdgeInsets.only(bottom: 16.0),
+      padding: const EdgeInsets.only(bottom: 16.0),
       child: TextField(
-        decoration: InputDecoration(
+        decoration: const InputDecoration(
           hintText: "Search here...",
           prefixIcon: Icon(Icons.search),
         ),
@@ -56,17 +56,17 @@ class _SearchListViewExampleState extends State<SearchListViewExample> {
   Widget _mainData() {
     return Center(
       child: isLoading
-          ? CircularProgressIndicator()
+          ? const CircularProgressIndicator()
           : ListView.builder(
               itemCount: searchResults!.length,
               itemBuilder: (context, index) {
                 return ListTile(
                   title: Text(
                     searchResults![index].name,
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    style: const TextStyle(fontWeight: FontWeight.bold),
                   ),
                   subtitle: Text(searchResults![index].address),
-                  leading: Icon(Icons.location_pin),
+                  leading: const Icon(Icons.location_pin),
                 );
               },
             ),

@@ -10,9 +10,9 @@ class BaatoLocationPickerExample extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Baato Location Picker Example"),
+        title: const Text("Baato Location Picker Example"),
       ),
-      body: BaatoReversePage(),
+      body: const BaatoReversePage(),
     );
   }
 }

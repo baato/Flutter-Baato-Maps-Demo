@@ -8,6 +8,6 @@ class MonochromeMapStyle extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return BaatoMapStyleView(style: BaatoMapStyle.monochrome);
+    return const BaatoMapStyleView(style: BaatoMapStyle.monochrome);
   }
 }

@@ -119,14 +119,14 @@ class StringList extends StatelessWidget {
               case 0:
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => BaatoSearchExample()),
+                  MaterialPageRoute(builder: (context) => const BaatoSearchExample()),
                 );
                 break;
               case 1:
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => BaatoReverseExample(),
+                    builder: (context) => const BaatoReverseExample(),
                   ),
                 );
                 break;
@@ -134,7 +134,7 @@ class StringList extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => BaatoLocationPickerExample(),
+                    builder: (context) => const BaatoLocationPickerExample(),
                   ),
                 );
                 break;
@@ -142,26 +142,26 @@ class StringList extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => BaatoDirectionsExample(),
+                    builder: (context) => const BaatoDirectionsExample(),
                   ),
                 );
                 break;
               case 4:
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => BreezeMapStyle()),
+                  MaterialPageRoute(builder: (context) => const BreezeMapStyle()),
                 );
                 break;
               case 5:
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => MonochromeMapStyle()),
+                  MaterialPageRoute(builder: (context) => const MonochromeMapStyle()),
                 );
                 break;
               case 6:
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => RetroMapStyle()),
+                  MaterialPageRoute(builder: (context) => const RetroMapStyle()),
                 );
                 break;
             }

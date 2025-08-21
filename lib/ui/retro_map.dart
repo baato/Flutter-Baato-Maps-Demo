@@ -8,6 +8,6 @@ class RetroMapStyle extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return BaatoMapStyleView(style: BaatoMapStyle.retro);
+    return const BaatoMapStyleView(style: BaatoMapStyle.retro);
   }
 }
