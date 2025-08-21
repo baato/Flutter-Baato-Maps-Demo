@@ -11,7 +11,6 @@ class BaatoLocationPickerExample extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Baato Location Picker Example"),
-        backgroundColor: Color.fromRGBO(8, 30, 42, 50),
       ),
       body: BaatoReversePage(),
     );
@@ -26,7 +25,7 @@ class BaatoReversePage extends StatefulWidget {
 }
 
 class _BaatoReversePageState extends State<BaatoReversePage> {
-  final BaatoMapController mapController=BaatoMapController();
+  final BaatoMapController mapController = BaatoMapController();
   BaatoPlaceResponse? placeResponse;
   bool isCameraMoving = false;
 
@@ -63,11 +62,12 @@ class _BaatoReversePageState extends State<BaatoReversePage> {
       body: Stack(
         children: [
           BaatoMap(
-            controller: mapController,
+              controller: mapController,
               trackCameraPosition: true,
               onMapCreated: _onMapCreated,
               onCameraIdle: _onCameraIdle,
-              onMapClick: (point, coordinate, features) async {//onTAP--> onMapClick
+              onMapClick: (point, coordinate, features) async {
+                //onTAP--> onMapClick
                 mapController.cameraManager.moveTo(coordinate);
                 _requestLocationDetails(coordinate);
                 _showMarkerOnTheTappedLocation(coordinate);
