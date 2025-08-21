@@ -9,7 +9,6 @@ class BaatoSearchExample extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Baato Search"),
-        backgroundColor: Color.fromRGBO(8, 30, 42, 50),
       ),
       body: SearchListViewExample(),
     );
