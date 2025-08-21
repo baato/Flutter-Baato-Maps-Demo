@@ -15,7 +15,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await Baato.configure(
-      apiKey: "Your-API-KEY",
+      apiKey: "bpk.TqpOIK5KflKR_zEI0ONEVdCZmwmfMye9i67nAjsGlMgQ",
       enableLogging: true);
   runApp(const BaatoExampleApp());
 }

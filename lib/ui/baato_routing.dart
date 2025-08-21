@@ -11,7 +11,6 @@ class BaatoDirectionsExample extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Baato Directions"),
-        backgroundColor: Color.fromRGBO(8, 30, 42, 50),
       ),
       body: BaatoDirectionsPage(),
     );
