@@ -28,12 +28,11 @@ packages:
   baato_maps:
     dependency: "direct main"
     description:
-      path: "."
-      ref: "version1.0.3"
-      resolved-ref: "0ba5376b9f2431a1f22d4c43f25a7bb4bcf7e538"
-      url: "https://github.com/baato/flutter_baato_maps.git"
-    source: git
-    version: "1.0.1"
+      name: baato_maps
+      sha256: "06e0e6393baef922f83b5fca24aec76a4ad17e4f6e99defaba9bb14c9b4f3600"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.3"
   boolean_selector:
     dependency: transitive
     description:
@@ -111,6 +110,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_dotenv:
+    dependency: "direct main"
+    description:
+      name: flutter_dotenv
+      sha256: b7c7be5cd9f6ef7a78429cabd2774d3c4af50e79cb2b7593e3d5d763ef95c61b
+      url: "https://pub.dev"
+    source: hosted
+    version: "5.2.1"
   flutter_lints:
     dependency: "direct dev"
     description:

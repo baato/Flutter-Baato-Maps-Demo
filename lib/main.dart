@@ -8,13 +8,15 @@ import 'ui/baato_search.dart';
 import 'ui/breeze_map.dart';
 import 'ui/monochrome_map.dart';
 import 'ui/retro_map.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 BaatoAPI baatoAPI = Baato.api;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  await Baato.configure(apiKey: "api_key", enableLogging: true);
+  await Baato.configure(
+      apiKey: dotenv.get('baato_api_key'), enableLogging: true);
   runApp(const BaatoExampleApp());
 }
 
