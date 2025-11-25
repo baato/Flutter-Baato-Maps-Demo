@@ -15,6 +15,8 @@ BaatoAPI baatoAPI = Baato.api;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
+  await dotenv.load(fileName: ".env");
+
   await Baato.configure(
       apiKey: dotenv.get('baato_api_key'), enableLogging: true);
   runApp(const BaatoExampleApp());
