@@ -42,6 +42,7 @@ class _BaatoDirectionsPageState extends State<BaatoDirectionsPage> {
     return Scaffold(
       body: BaatoMap(
         controller: mapController,
+        style: BaatoMapStyle.defaultStyle,
         onMapCreated: _onMapCreated,
         onMapClick: (point, coordinate, feature) {
           _addTappedPointToPointsList(coordinate);

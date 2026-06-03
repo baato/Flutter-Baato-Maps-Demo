@@ -41,6 +41,7 @@ class _BaatoReversePageState extends State<BaatoReversePage> {
       body: BaatoMap(
         onStyleLoadedCallback: _onStyleLoaded,
         myLocationEnabled: true,
+        style: BaatoMapStyle.defaultStyle,
         controller: mapController,
         // onTap: (point, coordinate, features) {
         //   print("hello I have been tapped2");

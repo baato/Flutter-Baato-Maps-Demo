@@ -64,6 +64,7 @@ class _BaatoReversePageState extends State<BaatoReversePage> {
           BaatoMap(
               controller: mapController,
               trackCameraPosition: true,
+              style: BaatoMapStyle.defaultStyle,
               onMapCreated: _onMapCreated,
               onCameraIdle: _onCameraIdle,
               onMapClick: (point, coordinate, features) async {
