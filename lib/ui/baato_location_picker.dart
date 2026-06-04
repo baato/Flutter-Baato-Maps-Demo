@@ -62,6 +62,7 @@ class _BaatoReversePageState extends State<BaatoReversePage> {
       body: Stack(
         children: [
           BaatoMap(
+              style: BaatoMapStyle.defaultStyle,
               controller: mapController,
               trackCameraPosition: true,
               onMapCreated: _onMapCreated,
