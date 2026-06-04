@@ -41,6 +41,7 @@ class _BaatoDirectionsPageState extends State<BaatoDirectionsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: BaatoMap(
+        style: BaatoMapStyle.defaultStyle,
         controller: mapController,
         onMapCreated: _onMapCreated,
         onMapClick: (point, coordinate, feature) {

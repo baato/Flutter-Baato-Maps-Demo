@@ -8,9 +8,9 @@ This is a public demo of the Baato App for Flutter. This app shows the way to in
 - **Dart:** 3.10.1 or higher
 - **Baato Maps:** 1.1.0
 - **Java:** 21 (for Android builds)
-- **Kotlin:** 2.1.0
-- **Android Gradle Plugin:** 8.9.1
-- **Gradle:** 8.11.1
+- **Kotlin:** 2.2.20
+- **Android Gradle Plugin:** 8.11.1
+- **Gradle:** 8.14.5
 - **NDK:** 28.1.13356709
 
 ## Running locally
@@ -57,7 +57,7 @@ The project is configured with:
 - **targetSdk:** Defined by Flutter
 - **NDK Version:** 28.1.13356709
 - **Java Version:** 21
-- **Kotlin Version:** 2.1.0
+- **Kotlin Version:** 2.2.20
 
 ## API Documentation
 

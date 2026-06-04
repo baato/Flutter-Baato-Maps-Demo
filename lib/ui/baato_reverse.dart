@@ -39,6 +39,7 @@ class _BaatoReversePageState extends State<BaatoReversePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: BaatoMap(
+        style: BaatoMapStyle.defaultStyle,
         onStyleLoadedCallback: _onStyleLoaded,
         myLocationEnabled: true,
         controller: mapController,
